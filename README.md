@@ -10,11 +10,13 @@
 ## 使用方式
 在main.go的main函数中修改该行代码
 ```
-err := session.InitSession("DDXQSESSID=xxxxxxxxxxx", "xxxxxxxxxxxxx")
+err := session.InitSession("DDXQSESSID=xxxxxxxxxxx", "uid", "xxxxxxxxxxxxx")
 ```
 其中第一个参数为叮咚登录cookie，需要抓包获取，形式为```"DDXQSESSID=xxxxxxxxxxx""```
 
-第二个参数为通知用的bark id，下载bark后从app界面获取
+第二个参数为为叮咚用户id，需要抓包获取hearder，形式为```"ddmc-uid:xxxxxxxxxxx""```
+
+第三个参数为通知用的bark id，下载bark后从app界面获取
 
 <img src="./assets/bark.jpg" width="300">
 
