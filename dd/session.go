@@ -10,6 +10,7 @@ import (
 
 type DingdongSession struct {
 	Address      Address      `json:"address"`
+	UId          string       `json:"ddmc-uid"`
 	BarkId       string       `json:"bark_id"`
 	Client       *http.Client `json:"client"`
 	Cookie       string       `json:"cookie"`
@@ -20,10 +21,11 @@ type DingdongSession struct {
 	CartMode     int          `json:"cart_mode"`
 }
 
-func (s *DingdongSession) InitSession(cookie string, barkId string) error {
+func (s *DingdongSession) InitSession(cookie string, uId string, barkId string) error {
 	fmt.Println("########## 初始化 ##########")
 	s.Client = &http.Client{}
 	s.Cookie = cookie
+	s.UId = uId
 	s.BarkId = barkId
 	err, addrList := s.GetAddress()
 	if err != nil {
