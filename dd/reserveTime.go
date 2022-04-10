@@ -63,6 +63,7 @@ func (s *DingdongSession) GetMultiReserveTime() (error, []ReserveTime) {
 	req.Header.Set("content-type", "application/x-www-form-urlencoded")
 	req.Header.Set("ddmc-app-client-id", "3")
 	req.Header.Set("ddmc-api-version", "9.49.0")
+	req.Header.Set("ddmc-uid", s.UId)
 	req.Header.Set("ddmc-station-id", s.Address.StationId)
 	req.Header.Set("origin", "https://wx.m.ddxq.mobi")
 	req.Header.Set("x-requested-with", "com.yaya.zone")
